@@ -16,7 +16,7 @@ import mujoco_py
 from rl_modules.ddpg_agent import ddpg_agent
 from vec_env.subproc_vec_env import SubprocVecEnv
 from stable_baselines3.common.vec_env import VecVideoRecorder, vec_normalize
-import envs, gym_fetch_stack
+import envs 
 
 
 def get_env_params(env):
@@ -41,7 +41,7 @@ def launch(args):
     test_env.close()
     # create the ddpg_agent
     def make_env():
-        import envs, gym_fetch_stack  # needed when using start_method="spawn"
+        import envs # needed when using start_method="spawn"
         return gym.make(args.env_name)
     env = SubprocVecEnv([make_env for i in range(args.num_workers)], start_method="spawn")
     if args.norm_reward:

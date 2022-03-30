@@ -23,7 +23,7 @@ In general, `setup` specifies the environment and exploration schedule and `expe
 python launch.py -m +experiment=3pdense_fastexp +setup=transformer,padded_mlp seed="range(5)"
 
 # 3 push for deepset uses a faster exploration schedule
-python launch.py -m +experiment=3pdense_fastexp +setup=deepset seed="range(5)"
+python launch.py -m +setup=3pdense_fastexp +experiment=deepset seed=0
 ```
 
 ## License
